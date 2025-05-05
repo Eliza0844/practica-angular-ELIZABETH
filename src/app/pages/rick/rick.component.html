@@ -1,0 +1,36 @@
+<style>
+  .rick-title {
+    animation: zoomIn 1s ease-in-out;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #39FF14; /* Verde neón */
+    text-shadow: 2px 2px 8px #0ff;
+  }
+
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<div class="row">
+  <div class="col-12">
+    <h1 class="text-center display-1 rick-title">
+      Rick-<span class="text-warning">And</span>-<span class="text-primary">Morty</span>
+    </h1>
+  </div>
+</div>
+
+<div class="row">
+  <rick-search (eventSearch)="searchRick($event)"></rick-search>
+</div>
+
+<rick-paginacion (eventNewRicks)="setNewRicks($event)"></rick-paginacion>
+<rick-card [ricksAll]="ricks"></rick-card>
+<rick-paginacion></rick-paginacion>
+
